@@ -1,0 +1,208 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 575296 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=11344, tid=0x00000000000050cc
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_212-b10) (build 1.8.0_212-b10)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.212-b10 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000018a52000):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=20684, stack(0x0000000018e90000,0x0000000018f90000)]
+
+Stack: [0x0000000018e90000,0x0000000018f90000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:   2594  480       4       org.aspectj.apache.bcel.classfile.Attribute::readAttribute (568 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000196a1000 JavaThread "surefire-forkedjvm-command-thread" daemon [_thread_blocked, id=11112, stack(0x0000000019a90000,0x0000000019b90000)]
+  0x0000000018a4a000 JavaThread "Service Thread" daemon [_thread_blocked, id=12264, stack(0x0000000019090000,0x0000000019190000)]
+  0x0000000018a6d800 JavaThread "C1 CompilerThread2" daemon [_thread_in_native, id=3392, stack(0x0000000018f90000,0x0000000019090000)]
+=>0x0000000018a52000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=20684, stack(0x0000000018e90000,0x0000000018f90000)]
+  0x0000000018a46000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=2544, stack(0x0000000018d90000,0x0000000018e90000)]
+  0x0000000017325000 JavaThread "Attach Listener" daemon [_thread_blocked, id=19568, stack(0x0000000018890000,0x0000000018990000)]
+  0x0000000017324000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5296, stack(0x0000000018790000,0x0000000018890000)]
+  0x00000000027bc800 JavaThread "Finalizer" daemon [_thread_blocked, id=21844, stack(0x0000000018580000,0x0000000018680000)]
+  0x00000000027b3800 JavaThread "Reference Handler" daemon [_thread_blocked, id=10260, stack(0x0000000018480000,0x0000000018580000)]
+  0x00000000026c2800 JavaThread "main" [_thread_in_vm, id=9432, stack(0x0000000002430000,0x0000000002530000)]
+
+Other Threads:
+  0x00000000172e7000 VMThread [stack: 0x0000000018380000,0x0000000018480000] [id=18316]
+  0x0000000018ac1800 WatcherThread [stack: 0x0000000019190000,0x0000000019290000] [id=2536]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000081600000, size: 2026 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 38400K, used 26328K [0x00000000d5d00000, 0x00000000d8780000, 0x0000000100000000)
+  eden space 33280K, 79% used [0x00000000d5d00000,0x00000000d76b6260,0x00000000d7d80000)
+  from space 5120K, 0% used [0x00000000d8280000,0x00000000d8280000,0x00000000d8780000)
+  to   space 5120K, 0% used [0x00000000d7d80000,0x00000000d7d80000,0x00000000d8280000)
+ ParOldGen       total 87552K, used 0K [0x0000000081600000, 0x0000000086b80000, 0x00000000d5d00000)
+  object space 87552K, 0% used [0x0000000081600000,0x0000000081600000,0x0000000086b80000)
+ Metaspace       used 8668K, capacity 8784K, committed 8960K, reserved 1056768K
+  class space    used 915K, capacity 944K, committed 1024K, reserved 1048576K
+
+Card table byte_map: [0x0000000011b80000,0x0000000011f80000] byte_map_base: 0x0000000011775000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000567e5ce0
+ Begin Bits: [0x0000000012630000, 0x00000000145d8000)
+ End Bits:   [0x00000000145d8000, 0x0000000016580000)
+
+Polling page: 0x0000000000430000
+
+CodeCache: size=245760Kb used=2791Kb max_used=2791Kb free=242968Kb
+ bounds [0x00000000027c0000, 0x0000000002a80000, 0x00000000117c0000]
+ total_blobs=843 nmethods=552 adapters=204
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 2.577 Thread 0x0000000018a6d800 nmethod 550 0x0000000002a548d0 code [0x0000000002a552c0, 0x0000000002a5d028]
+Event: 2.577 Thread 0x0000000018a6d800  555       3       org.aspectj.weaver.TypeFactory::createTypeFromSignature (985 bytes)
+Event: 2.588 Thread 0x0000000018a6d800 nmethod 555 0x0000000002a64d90 code [0x0000000002a65860, 0x0000000002a6e6f8]
+Event: 2.588 Thread 0x0000000018a6d800  560       1       org.aspectj.weaver.World::setTypeVariableLookupScope (6 bytes)
+Event: 2.588 Thread 0x0000000018a6d800 nmethod 560 0x0000000002a74610 code [0x0000000002a74760, 0x0000000002a74890]
+Event: 2.588 Thread 0x0000000018a6d800  561       3       java.io.DataInputStream::readUTF (501 bytes)
+Event: 2.588 Thread 0x0000000018a46000 nmethod 524 0x0000000002a74910 code [0x0000000002a74ac0, 0x0000000002a765f0]
+Event: 2.588 Thread 0x0000000018a46000  559       4       java.io.DataInputStream::readInt (72 bytes)
+Event: 2.591 Thread 0x0000000018a6d800 nmethod 561 0x0000000002a61150 code [0x0000000002a61520, 0x0000000002a637e8]
+Event: 2.591 Thread 0x0000000018a6d800  556       3       org.aspectj.weaver.Lint::suppressKinds (45 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (2 events):
+Event: 1.575 Thread 0x00000000026c2800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000290d8f4 method=java.lang.String.indexOf([CII[CIII)I @ 134
+Event: 2.588 Thread 0x00000000026c2800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002a00cc0 method=java.io.DataInputStream.readUTF(Ljava/io/DataInput;)Ljava/lang/String; @ 112
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 2.257 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 7> (0x00000000d6d42738) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.271 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 11> (0x00000000d6d99388) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.271 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 11> (0x00000000d6d997a8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.271 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 11> (0x00000000d6d99bc8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.272 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 9> (0x00000000d6d9af30) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.272 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 9> (0x00000000d6d9b350) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.272 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 9> (0x00000000d6d9b770) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+Event: 2.273 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000d6da1618) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 2.273 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000d6da1a38) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 2.273 Thread 0x00000000026c2800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 7> (0x00000000d6da1e58) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u212\12974\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 368]
+
+Events (10 events):
+Event: 2.580 loading class java/util/concurrent/RunnableScheduledFuture done
+Event: 2.580 loading class java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject
+Event: 2.580 loading class java/util/concurrent/locks/Condition
+Event: 2.581 loading class java/util/concurrent/locks/Condition done
+Event: 2.581 loading class java/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject done
+Event: 2.581 loading class org/apache/maven/surefire/booter/PpidChecker
+Event: 2.581 loading class org/apache/maven/surefire/booter/PpidChecker done
+Event: 2.588 Thread 0x00000000026c2800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x0000000002a00cc0
+Event: 2.588 Thread 0x00000000026c2800 DEOPT PACKING pc=0x0000000002a00cc0 sp=0x000000000252ab70
+Event: 2.588 Thread 0x00000000026c2800 DEOPT UNPACKING pc=0x000000000280583b sp=0x000000000252ab48 mode 2
+
+
+Dynamic libraries:
+0x00007ff7b12f0000 - 0x00007ff7b1327000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\java.exe
+0x00007ffc00d30000 - 0x00007ffc00f1d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffbfe080000 - 0x00007ffbfe133000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffbfceb0000 - 0x00007ffbfd143000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffbfe6b0000 - 0x00007ffbfe753000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffc00b60000 - 0x00007ffc00bfe000 	C:\Windows\System32\msvcrt.dll
+0x00007ffc00c60000 - 0x00007ffc00cfe000 	C:\Windows\System32\sechost.dll
+0x00007ffc005a0000 - 0x00007ffc006c2000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffbfe8a0000 - 0x00007ffbfea37000 	C:\Windows\System32\USER32.dll
+0x00007ffbfce90000 - 0x00007ffbfceb0000 	C:\Windows\System32\win32u.dll
+0x00007ffc00890000 - 0x00007ffc008b9000 	C:\Windows\System32\GDI32.dll
+0x00007ffbfd610000 - 0x00007ffbfd7a9000 	C:\Windows\System32\gdi32full.dll
+0x00007ffbfcdf0000 - 0x00007ffbfce90000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffbfd4b0000 - 0x00007ffbfd5aa000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffbe89d0000 - 0x00007ffbe8c49000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.737_none_05b6437c071e554b\COMCTL32.dll
+0x00007ffbfff70000 - 0x00007ffc0029c000 	C:\Windows\System32\combase.dll
+0x00007ffbfd200000 - 0x00007ffbfd27e000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffc00a80000 - 0x00007ffc00aae000 	C:\Windows\System32\IMM32.DLL
+0x0000000055ee0000 - 0x0000000055fb2000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\msvcr100.dll
+0x0000000055fc0000 - 0x0000000056865000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\server\jvm.dll
+0x00007ffc006d0000 - 0x00007ffc006d8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffbf8a50000 - 0x00007ffbf8a59000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffbfe140000 - 0x00007ffbfe1ad000 	C:\Windows\System32\WS2_32.dll
+0x00007ffbf1830000 - 0x00007ffbf1854000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffbf0210000 - 0x00007ffbf021a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffbf1800000 - 0x00007ffbf182d000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffbfdf00000 - 0x00007ffbfdf4a000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffbfb8f0000 - 0x00007ffbfb8ff000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\verify.dll
+0x00007ffbfb130000 - 0x00007ffbfb159000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\java.dll
+0x00007ffbf8a60000 - 0x00007ffbf8a83000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\instrument.dll
+0x00007ffbf92d0000 - 0x00007ffbf92e6000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\zip.dll
+0x00007ffbfea60000 - 0x00007ffbfff52000 	C:\Windows\System32\SHELL32.dll
+0x00007ffc00ab0000 - 0x00007ffc00b58000 	C:\Windows\System32\shcore.dll
+0x00007ffbfd7b0000 - 0x00007ffbfdefa000 	C:\Windows\System32\windows.storage.dll
+0x00007ffbfcd20000 - 0x00007ffbfcd44000 	C:\Windows\System32\profapi.dll
+0x00007ffbfcd90000 - 0x00007ffbfcded000 	C:\Windows\System32\powrprof.dll
+0x00007ffc00490000 - 0x00007ffc004e2000 	C:\Windows\System32\shlwapi.dll
+0x00007ffbfcd50000 - 0x00007ffbfcd61000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffbfd490000 - 0x00007ffbfd4a7000 	C:\Windows\System32\cryptsp.dll
+0x00007ffbfb8b0000 - 0x00007ffbfb8bd000 	C:\Program Files\Java\jdk1.8.0_212\jre\bin\management.dll
+
+VM Arguments:
+jvm_args: -javaagent:C:\Users\Dell\.m2\repository/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2.jar 
+java_command: C:\Users\Dell\AppData\Local\Temp\surefire1457630138677635790\surefirebooter8195841677518949095.jar C:\Users\Dell\AppData\Local\Temp\surefire1457630138677635790 2019-09-20T14-03-41_837-jvmRun1 surefire5111434523829999261tmp surefire_07712380960112458159tmp
+java_class_path (initial): C:\Users\Dell\AppData\Local\Temp\surefire1457630138677635790\surefirebooter8195841677518949095.jar;C:\Users\Dell\.m2\repository/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_212
+PATH=C:\Program Files\Java\jdk1.8.0_212\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_212\bin;C:\Program Files\Git\bin;C:\Gradle\gradle-5.5\bin;C:\apache-maven-3.6.1\bin;C:\Windows\system32;C:\allure-2.12.1\bin;C:\Users\Dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1.1\bin;;C:\Users\Dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\allure-2.12.1\bin;
+USERNAME=Dell
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.475)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8291232k(738100k free), swap 33457056k(4120k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.212-b10) for windows-amd64 JRE (1.8.0_212-b10), built on Apr  1 2019 22:50:23 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Sep 20 14:03:47 2019
+timezone: Œrodkowoeuropejski czas letni
+elapsed time: 2 seconds (0d 0h 0m 2s)
+

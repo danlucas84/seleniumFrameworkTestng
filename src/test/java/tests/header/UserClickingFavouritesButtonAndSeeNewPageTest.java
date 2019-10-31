@@ -1,21 +1,29 @@
 package tests.header;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
+import pages.HomePage;
 import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserClickingShowFavoritesButtonAndSeeNewPageTest {
+@Epic("automation tests")
+
+@Feature(" Positive navigating feature tests")
+
+public class UserClickingFavouritesButtonAndSeeNewPageTest {
 
     private WebDriver driver;
     private String url = "htps://vendoria.pl";
 
     HeaderPage headerPage;
+    HomePage homePage;
 
     @Step
     @BeforeMethod
@@ -39,15 +47,26 @@ public class UserClickingShowFavoritesButtonAndSeeNewPageTest {
     @Test
     public void clickOnRodoButton() {
 
-        headerPage.newObject(driver)
-                .clickOnshowfavoritesButton();
+
+
+        homePage.newObject(driver)
+                .clickOnRodoButton();
     }
 
     @Step
     @Test
-    public void UserShouldSeeLandingPage() {
 
-        String expectedUrl = "https//:vendoria.pl";
+    public void clickOnfavouritesButton(){
+        headerPage.newObject(driver)
+                .clickOnfavouritesButton();
+    }
+
+
+    @Step
+    @Test
+    public void UserShouldSeePageWithPromotedFavouritesItems() {
+
+        String expectedUrl = "https://vendoria.pl/showfavourites";
         assertThat(driver.getCurrentUrl().equalsIgnoreCase(expectedUrl));
     }
 }

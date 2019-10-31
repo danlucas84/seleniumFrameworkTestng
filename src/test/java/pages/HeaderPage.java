@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HeaderPage extends BasePage {
 
-    public static HeaderPage newObject(WebDriver driver){
+    public static HeaderPage newObject(WebDriver driver) {
         return new HeaderPage(driver);
     }
 
@@ -17,11 +17,31 @@ public class HeaderPage extends BasePage {
 
     }
 
+
+
+    @FindBy(xpath = "//*[@id=\"top-menu-bar\"]/div[3]//a[2]//span[1]")
+    WebElement favouritesButton;
+
+    /**
+     * click button to go to favourites items
+     *
+     * @return
+     */
+
+    public HeaderPage clickOnfavouritesButton() {
+
+        favouritesButton.isEnabled();
+        favouritesButton.isDisplayed();
+        favouritesButton.click();
+        return this;
+    }
+
     @FindBy(xpath = "//span[@class='fa fa-shopping-bag fa-2x']")
     WebElement myOrdersButton;
 
     /**
      * Click button to show user orders
+     *
      * @return
      */
     public HeaderPage clickOnMyOrdersButton() {
@@ -32,14 +52,14 @@ public class HeaderPage extends BasePage {
     }
 
 
-
-    @FindBy(xpath="//a[contains(@class,'feegle-action-login-popup')]")
+    @FindBy(xpath = "//a[contains(@class,'feegle-action-login-popup')]")
     WebElement accountButton;
 
     /**
-    * click button to go user accunt ( e.g to log in)
-    * @return
-    */
+     * click button to go user accunt ( e.g to log in)
+     *
+     * @return
+     */
     public HeaderPage clickOnAccountButton() {
         accountButton.isEnabled();
         accountButton.isDisplayed();
@@ -47,23 +67,8 @@ public class HeaderPage extends BasePage {
         return this;
     }
 
-    @FindBy(xpath ="//*[@id=\"top-menu-bar\"]/div[3]//a[2]//span[1]")
-    WebElement favouritesButton;
 
-    /**
-     * click button to go to favourites items
-     * @return
-     */
-
-    public HeaderPage clickOnfavouritesButton() {
-
-        favouritesButton.isEnabled();
-        favouritesButton.isDisplayed();
-        favouritesButton.click();
-        return this;
-
-
-
+    public void clickOnRodoButton() {
     }
 }
 

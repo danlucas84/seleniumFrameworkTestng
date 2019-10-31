@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage {
 
-    protected final WebDriver driver;
+    protected static WebDriver driver;
 
     BasePage(WebDriver driver) {
 

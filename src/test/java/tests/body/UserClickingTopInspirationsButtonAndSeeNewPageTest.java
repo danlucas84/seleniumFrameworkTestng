@@ -11,7 +11,7 @@ import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserClickingTopInspirationsAndSeeNewPageTest extends BaseTest {
+public class UserClickingTopInspirationsButtonAndSeeNewPageTest extends BaseTest {
 
     private WebDriver driver;
     HomePage homePage;

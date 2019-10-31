@@ -12,7 +12,7 @@ import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserClickingRecentlySearchedAndSeeNewPageTest {
+public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
 
     private WebDriver driver;
     private String url = "htps://vendoria.pl";

@@ -31,22 +31,15 @@ public class HeaderPage extends BasePage {
         return this;
     }
 
-    public HeaderPage cliokcośtsm() {
-        myOrdersButton.click();
-        return this;
 
-        // a nie  getheederpage jak w tutorialu
-// header page new header page
 
-        //headerpage.akcja1
-        //.akcja2
-        //chainowanie aby pokazac  łacuch akcji usera
-// metody
-    }
-
-    @FindBy(xpath="")
+    @FindBy(xpath="//a[contains(@class,'feegle-action-login-popup')]")
     WebElement accountButton;
 
+    /**
+    * click button to go user accunt ( e.g to log in)
+    * @return
+    */
     public HeaderPage clickOnAccountButton() {
         accountButton.isEnabled();
         accountButton.isDisplayed();
@@ -54,7 +47,23 @@ public class HeaderPage extends BasePage {
         return this;
     }
 
-    public void clickOnshowfavoritesButton() {
+    @FindBy(xpath ="//*[@id=\"top-menu-bar\"]/div[3]//a[2]//span[1]")
+    WebElement favouritesButton;
+
+    /**
+     * click button to go to favourites items
+     * @return
+     */
+
+    public HeaderPage clickOnfavouritesButton() {
+
+        favouritesButton.isEnabled();
+        favouritesButton.isDisplayed();
+        favouritesButton.click();
+        return this;
+
+
+
     }
 }
 

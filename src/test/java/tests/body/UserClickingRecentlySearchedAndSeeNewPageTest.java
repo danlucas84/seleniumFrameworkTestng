@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import pages.BodyPage;
 import pages.HomePage;
 import utils.ConfigFileReader;
@@ -14,30 +15,44 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class UserClickingRecentlySearchedAndSeeNewPageTest {
 
     private WebDriver driver;
+    private String url = "htps://vendoria.pl";
+
     HomePage homePage;
     BodyPage bodyPage;
 
     @Step
     @BeforeMethod
 
-    public void ConfigReading(){
+    public void ConfigReading() {
 
         ConfigFileReader configFileReader = new ConfigFileReader();
         System.setProperty("webdriver.chrome.driver", configFileReader.getDriverPath());
         driver = new ChromeDriver();
-
-        //System.getProperty(configFileReader.getApplicationUrl());
+        System.getProperty(configFileReader.getApplicationUrl());
 
 
     }
 
     @Step
+    @Test
+
+    public void navigateToShopUrl() {
+
+
+        driver.get(url);
+
+
+}
+
+    @Step
+    @Test
     public void UserClickOnRodoButton(){
 
         homePage.clickOnRodoButton();
     }
 
     @Step
+    @Test
 
     public void UserClickingRecentlyResearchedButton(){
 
@@ -45,6 +60,7 @@ public class UserClickingRecentlySearchedAndSeeNewPageTest {
     }
 
     @Step
+    @Test
 
     public void UserShouldSeePageWithGetInspiredInformation(){
 

@@ -10,11 +10,12 @@ import org.testng.annotations.Test;
 import pages.BodyPage;
 import pages.FooterPage;
 import pages.HomePage;
+import tests.BaseTest;
 import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserClickingUpButtonInBodySectionAndMoveUpTest {
+public class UserClickingUpButtonInBodySectionAndMoveUpTest extends BaseTest {
 
     private WebDriver driver;
     BodyPage bodyPage;
@@ -34,6 +35,7 @@ public class UserClickingUpButtonInBodySectionAndMoveUpTest {
 
 
     @Step
+    @Test
     public void UserclickOnRodoButton() {
 
 
@@ -41,6 +43,7 @@ public class UserClickingUpButtonInBodySectionAndMoveUpTest {
     }
 
     @Step
+    @Test
     public void UserShouldSeeLandingPageContainingTitle() {
 
         assertThat(driver.getTitle()).containsIgnoringCase("Vendoria.pl");

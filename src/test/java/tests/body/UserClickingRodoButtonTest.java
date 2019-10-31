@@ -7,8 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.CurrentPage;
+import org.testng.annotations.Test;
 import pages.HomePage;
+import tests.BaseTest;
 import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,11 +18,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature(" Positive navigating feature tests")
 
-public class UserClickingRodoButtonTest {
+public class UserClickingRodoButtonTest extends BaseTest {
 
     private WebDriver driver;
     HomePage homePage;
-    CurrentPage currentPage;
+
 
 
     @Step
@@ -41,11 +42,13 @@ public class UserClickingRodoButtonTest {
 
 
     @Step
+    @Test
     public void clickOnRodoButton() {
 
         homePage.clickOnRodoButton();
     }
     @Step
+    @Test
     public void UserShouldSeeLandingPage(){
 
         String expectedUrl = "https://vendoria.pl";

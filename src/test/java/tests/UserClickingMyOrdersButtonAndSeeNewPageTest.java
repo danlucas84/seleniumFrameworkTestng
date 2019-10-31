@@ -56,14 +56,8 @@ public class UserClickingMyOrdersButtonAndSeeNewPageTest {
 
 
     }
-//    @Step
-//    @Test
-//    public void userClickingMyOrdersButton(){
-//        HeaderPage.newObject(driver)
-//                .clickOnMyOrdersButton()
-//                .cliokcośtsm();
 
-    //}
+
     @Step
     @Test
     public void UserShouldSeeMyOrdersPage (){

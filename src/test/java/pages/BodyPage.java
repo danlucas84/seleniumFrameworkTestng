@@ -13,15 +13,28 @@ public class BodyPage extends BasePage {
 
     }
 
-    @FindBy (xpath = "//a[@class='back-to-top-button-product-view']")
+    @FindBy(xpath = "//a[@class='back-to-top-button-product-view']")
     WebElement upButtton;
 
 
-    public void clickOnUpButton(){
+    public void clickOnUpButton() {
         upButtton.isEnabled();
         upButtton.isDisplayed();
         upButtton.click();
+    }
 
+
+
+
+    @FindBy (xpath = "//*[@id=\"categories\"]/ul/li[3]/a")
+    WebElement recentlySearchedButton;
+
+
+    public void clickOnRecentlySearchedButton(){
+
+            recentlySearchedButton.isEnabled();
+            recentlySearchedButton.isDisplayed();
+            recentlySearchedButton.click();
 
     }
 }

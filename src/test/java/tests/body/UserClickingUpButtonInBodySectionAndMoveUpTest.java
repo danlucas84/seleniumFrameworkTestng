@@ -20,7 +20,7 @@ public class UserClickingUpButtonInBodySectionAndMoveUpTest {
     BodyPage bodyPage;
     HomePage homePage;
     FooterPage footerPage;
-    JavascriptExecutor jse = (JavascriptExecutor) null;
+    JavascriptExecutor jse = null;
 
 
     @Step

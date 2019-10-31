@@ -22,8 +22,7 @@ public class BaseTest {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             driver.manage().deleteAllCookies();
-            //driver.navigate().to("https://15plus.pl/");
-            //driver.navigate().to("https://vendoria.pl/");
+
 
         }
 

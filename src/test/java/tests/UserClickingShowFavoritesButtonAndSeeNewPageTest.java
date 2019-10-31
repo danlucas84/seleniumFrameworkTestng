@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
-import pages.HomePage;
 import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -43,12 +42,14 @@ public class UserClickingShowFavoritesButtonAndSeeNewPageTest {
         headerPage.newObject(driver)
                 .clickOnshowfavoritesButton();
     }
+
     @Step
     @Test
-    public void UserShouldSeeLandingPage(){
+    public void UserShouldSeeLandingPage() {
 
         String expectedUrl = "https//:vendoria.pl";
         assertThat(driver.getCurrentUrl().equalsIgnoreCase(expectedUrl));
+    }
 }
 
 

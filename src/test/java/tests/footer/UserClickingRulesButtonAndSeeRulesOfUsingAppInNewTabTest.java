@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
+import pages.FooterPage;
 import pages.HomePage;
 import tests.BaseTest;
 import utils.ConfigFileReader;
@@ -12,6 +13,7 @@ public class UserClickingRulesButtonAndSeeRulesOfUsingAppInNewTabTest extends Ba
 
     private WebDriver driver;
     HomePage homePage;
+    FooterPage footerPage;
 
 
 

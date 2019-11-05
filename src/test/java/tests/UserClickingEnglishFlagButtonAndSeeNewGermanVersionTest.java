@@ -1,4 +1,4 @@
 package tests;
 
-public class UserClickingEnglishFlagButtonAndSeeNewGermanVersionTest {
+public class UserClickingEnglishFlagButtonAndSeeNewGermanVersionTest extends BaseTest {
 }

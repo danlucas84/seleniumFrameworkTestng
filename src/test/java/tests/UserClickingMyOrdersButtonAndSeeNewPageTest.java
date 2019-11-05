@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Positive navigating feature tests")
 
-public class UserClickingMyOrdersButtonAndSeeNewPageTest {
+public class UserClickingMyOrdersButtonAndSeeNewPageTest extends BaseTest{
 
     private WebDriver driver;
 
@@ -44,7 +44,7 @@ public class UserClickingMyOrdersButtonAndSeeNewPageTest {
     @Step
     @Test
     public void clickOnRodoButton() {
-        HomePage.newObject(driver)
+        HomePage.newPage(driver)
                 .clickOnRodoButton();
     }
     @Step

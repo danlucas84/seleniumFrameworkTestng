@@ -49,7 +49,7 @@ public class UserClickingFavouritesButtonAndSeeNewPageTest {
 
 
 
-        homePage.newObject(driver)
+        homePage.newPage(driver)
                 .clickOnRodoButton();
     }
 

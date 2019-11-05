@@ -8,11 +8,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.BodyPage;
 import pages.HomePage;
+import tests.BaseTest;
 import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
+public class UserClickingRecentlySearchedButtonAndSeeNewPageTest extends BaseTest {
 
     private WebDriver driver;
     private String url = "htps://vendoria.pl";
@@ -28,9 +29,8 @@ public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
         System.setProperty("webdriver.chrome.driver", configFileReader.getDriverPath());
         driver = new ChromeDriver();
         System.getProperty(configFileReader.getApplicationUrl());
-
-
     }
+
 
     @Step
     @Test
@@ -46,7 +46,7 @@ public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
     @Test
     public void UserClickOnRodoButton(){
 
-        homePage.newObject(driver)
+        homePage.newPage(driver)
                 .clickOnRodoButton();
     }
 

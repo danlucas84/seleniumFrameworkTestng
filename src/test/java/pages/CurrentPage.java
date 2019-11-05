@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class CurrentPage extends BasePage {
-    public static  CurrentPage newObject(WebDriver driver) {
+    public static  CurrentPage newPage(WebDriver driver) {
         return new CurrentPage(driver);
     }
 

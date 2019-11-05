@@ -22,7 +22,6 @@ public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
 
     @Step
     @BeforeMethod
-
     public void ConfigReading() {
 
         ConfigFileReader configFileReader = new ConfigFileReader();
@@ -35,7 +34,6 @@ public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
 
     @Step
     @Test
-
     public void navigateToShopUrl() {
 
 
@@ -48,20 +46,20 @@ public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
     @Test
     public void UserClickOnRodoButton(){
 
-        homePage.clickOnRodoButton();
+        homePage.newObject(driver)
+                .clickOnRodoButton();
     }
 
     @Step
     @Test
-
     public void UserClickingRecentlyResearchedButton(){
 
-        bodyPage.clickOnRecentlySearchedButton();
+        bodyPage.newPage(driver)
+                .clickOnRecentlySearchedButton();
     }
 
     @Step
     @Test
-
     public void UserShouldSeePageWithGetInspiredInformation(){
 
         String expectedUrl = "https://vendoria.pll/inspiracje/1";
@@ -70,7 +68,6 @@ public class UserClickingRecentlySearchedButtonAndSeeNewPageTest {
 
     @Step
     @AfterMethod
-
     public void ClosingDriver() {
         driver.close();
         driver.quit();

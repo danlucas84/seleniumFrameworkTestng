@@ -51,7 +51,7 @@ public class UserClickingRodoButtonTest extends BaseTest {
     @Test
     public void UserShouldSeeLandingPage(){
 
-        String expectedUrl = "https://vendoria.pl";
+      final String expectedUrl = "https://vendoria.pl";
         assertThat(driver.getCurrentUrl().equalsIgnoreCase(expectedUrl));
 
     }

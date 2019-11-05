@@ -11,6 +11,7 @@ import utils.ConfigFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 public class UserClickingTopInspirationsButtonAndSeeNewPageTest extends BaseTest {
 
     private WebDriver driver;
@@ -37,6 +38,14 @@ public class UserClickingTopInspirationsButtonAndSeeNewPageTest extends BaseTest
     public void UserShouldSeeLandingPageContainingTitle() {
 
         assertThat(driver.getTitle()).containsIgnoringCase("Vendoria.pl");
+
+        //dodac assercje na kod błedu w kazdej metodzie
+
+        // assercja taka powinna byc w utils
+
+        // jak wywołac kod błedu vendoria.pl/anvdf - zrobic losowy url przez uzycie fukcji random
+
+        // napisac  testy ktore spradzaja obługe błedów i kody odpwiedzi
 
     }
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BodyPage extends BasePage {
 
-    public static BodyPage newObject(WebDriver driver) {
+    public static BodyPage newPage(WebDriver driver) {
         return new BodyPage(driver);
     }
 
@@ -22,10 +22,8 @@ public class BodyPage extends BasePage {
 
     /**
      * click button to go to the page with recetly search items
-     * @return
+     * @return this object
      */
-
-
     public BodyPage clickOnRecentlySearchedButton() {
 
         recentlySearchedButton.isEnabled();
@@ -41,10 +39,8 @@ public class BodyPage extends BasePage {
     /**
      * click button to move up to the top of landing page
      *
-     * @return
+     * @return this object
      */
-
-
     public BodyPage clickOnUpButton() {
         upButtton.isEnabled();
         upButtton.isDisplayed();

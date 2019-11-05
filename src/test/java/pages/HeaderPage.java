@@ -9,6 +9,11 @@ public class HeaderPage extends BasePage {
 
     public static HeaderPage newObject(WebDriver driver) {
         return new HeaderPage(driver);
+
+        // w chainie mamy prakazany driver w sammym chainie uzywamy kostruktora i mozemt tez to
+        // nazwac tez mozna newPage(driver) lub newHeaderPage(driver) albo new(driver)
+        // builder i metoda inicjalizująca przy chain aby nie wywoływac kosstruktora wprost
+        // i potem mozna  wymusic dodatkowe działania po wywołaniu konstruktora wieksze pole manerwu
     }
 
     private HeaderPage(WebDriver driver) {
@@ -58,7 +63,7 @@ public class HeaderPage extends BasePage {
     /**
      * click button to go user accunt ( e.g to log in)
      *
-     * @return
+     * @return this object
      */
     public HeaderPage clickOnAccountButton() {
         accountButton.isEnabled();

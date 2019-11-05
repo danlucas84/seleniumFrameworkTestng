@@ -88,7 +88,7 @@ public class UserClickingUpButtonInBodySectionAndMoveUpTest extends BaseTest {
 
     public void UserShouldSeeRulesPage(){
 
-        String expectedUrl = "https://vendoria.pl/rules";
+       final String expectedUrl = "https://vendoria.pl/rules";
         assertThat((driver.getCurrentUrl()).equalsIgnoreCase(expectedUrl));
     }
 

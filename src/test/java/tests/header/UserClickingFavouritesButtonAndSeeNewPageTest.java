@@ -55,7 +55,6 @@ public class UserClickingFavouritesButtonAndSeeNewPageTest {
 
     @Step
     @Test
-
     public void clickOnfavouritesButton(){
         headerPage.newObject(driver)
                 .clickOnfavouritesButton();

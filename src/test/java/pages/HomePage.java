@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends BasePage {
 
     // zrob z tego stała private String url a potem properties;
-    public static HomePage newObject(WebDriver driver){
+    public static HomePage newPage(WebDriver driver){
         return new HomePage( driver);
     }
     HomePage(WebDriver driver) {

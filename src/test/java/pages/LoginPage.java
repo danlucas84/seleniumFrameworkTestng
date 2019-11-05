@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
 
+    public static LoginPage newPage(WebDriver driver) {
+        return new LoginPage(driver);
+    }
+
     LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
